@@ -108,3 +108,14 @@ export interface WorkflowLog {
   createdAt: string
   emailId?: string
 }
+
+export interface RunWorkflowRequest {
+  sender: string
+  subject: string
+  body: string
+}
+
+export interface RunWorkflowResponse {
+  status: string
+  result: unknown
+}
