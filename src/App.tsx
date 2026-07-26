@@ -4,6 +4,7 @@ import { LoginPage } from '@/features/auth/LoginPage'
 import { ProtectedRoute } from '@/features/auth/ProtectedRoute'
 import { CustomersPage } from '@/pages/CustomersPage'
 import { DashboardPage } from '@/pages/DashboardPage'
+import { EmailDetailPage } from '@/pages/EmailDetailPage'
 import { InboxPage } from '@/pages/InboxPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { ReportsPage } from '@/pages/ReportsPage'
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/inbox" element={<InboxPage />} />
+          <Route path="/inbox/:id" element={<EmailDetailPage />} />
           <Route path="/customers" element={<CustomersPage />} />
           <Route path="/workflows" element={<WorkflowsPage />} />
           <Route path="/reports" element={<ReportsPage />} />
