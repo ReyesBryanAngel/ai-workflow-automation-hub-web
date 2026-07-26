@@ -6,6 +6,7 @@ React + TypeScript app built with Vite.
 
 - [Vite](https://vite.dev) + [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) (Oxc-powered)
 - React 19 + TypeScript (strict mode)
+- [React Router](https://reactrouter.com) for routing, [TanStack Query](https://tanstack.com/query) for server state, [Axios](https://axios-http.com) for HTTP
 - [Tailwind CSS v4](https://tailwindcss.com) via `@tailwindcss/vite` (no PostCSS config needed)
 - [Oxlint](https://oxc.rs) for linting, [Prettier](https://prettier.io) for formatting
 - [Vitest](https://vitest.dev) + [React Testing Library](https://testing-library.com/react) for testing
@@ -18,6 +19,20 @@ npm install
 cp .env.example .env
 npm run dev
 ```
+
+This app consumes the `ai-workflow-automation-hub` backend API. Point `VITE_API_BASE_URL` at a running
+instance of it (default `http://localhost:4000/api`) and seed an admin user there (`prisma/seed.ts`) —
+there is no self-registration, only login.
+
+## App shell & auth
+
+- `src/lib/apiClient.ts` — shared Axios instance. Attaches `Authorization: Bearer <token>` from storage on
+  every request; on a `401` response it clears stored auth and hard-redirects to `/login`.
+- `src/lib/authStorage.ts` — single source of truth for persisting `{ token, user }` to `localStorage`.
+- `src/features/auth/` — `AuthProvider`/`useAuth` (React Context), `useLogin` (React Query mutation for
+  `POST /auth/login`), `LoginPage`, `LogoutButton`, `ProtectedRoute` (redirects to `/login` when signed out).
+- `src/components/layout/AppLayout.tsx` — sidebar nav + topbar shell wrapping all authenticated routes.
+- `src/pages/` — one route per module; most are placeholder stubs pending their own implementation phase.
 
 ## Scripts
 
