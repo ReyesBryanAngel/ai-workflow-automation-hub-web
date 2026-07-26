@@ -19,3 +19,24 @@ export interface ApiErrorBody {
   error: string
   details?: string | { path: (string | number)[]; message: string }[]
 }
+
+export interface DashboardStats {
+  todayEmails: number
+  aiProcessed: number
+  salesLeads: number
+  supportTickets: number
+  failedWorkflows: number
+}
+
+export type WorkflowStatus = 'SUCCESS' | 'FAILED' | 'RETRYING'
+
+export interface WorkflowLog {
+  id: string
+  workflow: string
+  status: WorkflowStatus
+  executionTime: number | null
+  error: string | null
+  retryCount: number
+  createdAt: string
+  emailId?: string
+}
