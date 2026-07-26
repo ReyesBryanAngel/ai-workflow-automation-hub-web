@@ -96,6 +96,24 @@ export interface CrmPrefillState {
   sourceEmailId: string
 }
 
+export interface CrmRecord {
+  id: string
+  customerName: string | null
+  email: string
+  company: string | null
+  source: string
+  createdAt: string
+  sourceEmailId?: string
+}
+
+export interface CreateCrmRecordRequest {
+  customerName: string | null
+  email: string
+  company?: string
+  source: string
+  sourceEmailId?: string
+}
+
 export type WorkflowStatus = 'SUCCESS' | 'FAILED' | 'RETRYING'
 
 export interface WorkflowLog {
