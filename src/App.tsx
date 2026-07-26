@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
 import { LoginPage } from '@/features/auth/LoginPage'
 import { ProtectedRoute } from '@/features/auth/ProtectedRoute'
+import { CrmRecordDetailPage } from '@/pages/CrmRecordDetailPage'
 import { CustomersPage } from '@/pages/CustomersPage'
 import { DashboardPage } from '@/pages/DashboardPage'
 import { EmailDetailPage } from '@/pages/EmailDetailPage'
@@ -23,6 +24,7 @@ function App() {
           <Route path="/inbox" element={<InboxPage />} />
           <Route path="/inbox/:id" element={<EmailDetailPage />} />
           <Route path="/customers" element={<CustomersPage />} />
+          <Route path="/customers/:id" element={<CrmRecordDetailPage />} />
           <Route path="/workflows" element={<WorkflowsPage />} />
           <Route path="/reports" element={<ReportsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
