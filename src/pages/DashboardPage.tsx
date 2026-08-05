@@ -9,7 +9,7 @@ const STAT_ITEMS: { key: keyof DashboardStats; label: string }[] = [
   { key: 'aiProcessed', label: 'AI Processed' },
   { key: 'salesLeads', label: 'Sales Leads' },
   { key: 'supportTickets', label: 'Support Tickets' },
-  { key: 'failedWorkflows', label: 'Failed Workflows' },
+  // { key: 'failedWorkflows', label: 'Failed Workflows' },
 ]
 
 export function DashboardPage() {
