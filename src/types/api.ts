@@ -137,3 +137,34 @@ export interface RunWorkflowResponse {
   status: string
   result: unknown
 }
+
+export interface EmailsPerDayPoint {
+  date: string
+  count: number
+}
+
+export interface CategoryDistributionPoint {
+  category: EmailCategory
+  count: number
+}
+
+export interface PriorityDistributionPoint {
+  priority: Priority
+  count: number
+}
+
+export interface WorkflowSuccessRate {
+  total: number
+  success: number
+  failed: number
+  retrying: number
+  // Fraction 0–1, not a percentage — multiply by 100 for display.
+  rate: number
+}
+
+export interface ReportsData {
+  emailsPerDay: EmailsPerDayPoint[]
+  categoryDistribution: CategoryDistributionPoint[]
+  priorityDistribution: PriorityDistributionPoint[]
+  workflowSuccessRate: WorkflowSuccessRate
+}

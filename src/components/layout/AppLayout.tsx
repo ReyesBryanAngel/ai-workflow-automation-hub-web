@@ -17,7 +17,7 @@ export function AppLayout() {
   return (
     <div className="flex min-h-svh w-full bg-[var(--bg)]">
       <aside className="flex w-56 shrink-0 flex-col border-r border-[var(--border)] px-3 py-4">
-        <div className="px-2 pb-4 text-sm font-semibold text-[var(--text-h)]">AI Workflow Hub</div>
+        <div className="px-2 pb-4 text-sm font-semibold text-[var(--text-h)]">FlowMind AI</div>
         <nav className="flex flex-col gap-1">
           {NAV_ITEMS.map((item) => (
             <NavLink
